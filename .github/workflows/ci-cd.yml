@@ -25,10 +25,12 @@ jobs:
         run: docker push nandhakumar638/springboot-cicd-demo:latest
 
   deploy:
-    runs-on: self-hosted   # 👈 IMPORTANT
+    runs-on: self-hosted
     needs: build-and-push
 
     steps:
-      - name: Restart Kubernetes Deployment
+      - name: Deploy to Kubernetes
         run: |
-          kubectl rollout restart deployment spring-app
+          kubectl apply -f deployment.yaml
+          kubectl apply -f service.yaml
+          kubectl rollout status deployment spring-app
