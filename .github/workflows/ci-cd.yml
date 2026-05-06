@@ -29,6 +29,9 @@ jobs:
     needs: build-and-push
 
     steps:
+      - name: Checkout Code  
+        uses: actions/checkout@v4
+
       - name: Deploy to Kubernetes
         run: |
           kubectl apply -f deployment.yaml
