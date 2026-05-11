@@ -9,6 +9,6 @@ public class HelloController {
     @GetMapping("/hello")
     public String hello() {
  
-        return "helooooooooooo";
+        return "CI cd implementation";
     }
 }
