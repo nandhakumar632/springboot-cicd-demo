@@ -8,7 +8,7 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello() {
-        System.out.println("hellooooooooooo");
-        return "hiiiii ci cd automation";
+ 
+        return "helooooooooooo";
     }
 }
